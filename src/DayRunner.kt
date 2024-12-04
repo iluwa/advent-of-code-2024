@@ -1,10 +1,12 @@
 fun runDay(
     day: String,
-    testResult: Int,
+    testResultExpected: Int,
     r: (l: List<String>) -> Int
 ) {
     val testInput = readInput("Day${day}_test")
-    check(r(testInput) == testResult)
+
+    val testResult = r(testInput)
+    check(testResult == testResultExpected) { "$testResult != $testResultExpected" }
     println("Check is okay")
 
     val input = readInput("Day${day}")

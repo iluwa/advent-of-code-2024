@@ -1,5 +1,3 @@
-import kotlin.collections.mutableListOf as mutableListOf1
-
 fun main() {
     runDay("04", 18) { input ->
         val arr = parseInput(input)
@@ -34,7 +32,7 @@ private fun parseInput(input: List<String>): List<List<Char>> {
 
 private fun List<List<Char>>.allWordsAroundCoordinate(coordinate: Pair<Int, Int>): List<String> {
     val (i, j) = coordinate
-    val res = mutableListOf1<String>()
+    val res = mutableListOf<String>()
     if (i > 2) res.add("" + this[i][j] + this[i - 1][j] + this[i - 2][j] + this[i - 3][j])
     if (j > 2) res.add("" + this[i][j] + this[i][j - 1] + this[i][j - 2] + this[i][j - 3])
     if (i < this.size - 3) res.add("" + this[i][j] + this[i + 1][j] + this[i + 2][j] + this[i + 3][j])

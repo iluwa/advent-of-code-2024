@@ -1,7 +1,7 @@
-fun runDay(
+fun <T : Number> runDay(
     day: String,
-    testResultExpected: Int,
-    r: (l: List<String>) -> Int
+    testResultExpected: T,
+    r: (l: List<String>) -> T
 ) {
     val testInput = readInput("Day${day}_test")
 
